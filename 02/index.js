@@ -13,6 +13,7 @@ let palavraa = "";
 server.get('/', (req, resp) => {
     palavra = second > 1 ? "segundos" : "segundo";
     palavraa = minute > 1 ? "minutos" : "minuto";
+
     resp.send(`Tempo atual do cronômetro: ${minute.toString().padStart(2, "0")} ${palavraa} e ${second.toString().padStart(2, "0")} ${palavra}`);
 });
 
