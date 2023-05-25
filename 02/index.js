@@ -9,14 +9,12 @@ let id;
 let palavra = "";
 let palavraa = "";
 
-// LETRA A
 server.get('/', (req, resp) => {
     palavra = second > 1 ? "segundos" : "segundo";
     palavraa = minute > 1 ? "minutos" : "minuto";
 
     resp.send(`Tempo atual do cronômetro: ${minute.toString().padStart(2, "0")} ${palavraa} e ${second.toString().padStart(2, "0")} ${palavra}`);
 });
-
 
 server.get('/iniciar', (req, resp) => {
     const crono = () => {
@@ -38,11 +36,8 @@ server.get('/iniciar', (req, resp) => {
         crono();
     }
 
-
-
     resp.send('Cronômetro iniciado!');
 });
-
 
 server.get('/pausar', (req, resp) => {
     ligado = false;
@@ -62,7 +57,6 @@ server.get('/zerar', (req, resp) => {
 
     resp.send('Cronômetro zerado!');
 });
-
 
 server.listen(8000, () => {
     console.log("Servidor inicializado!")
